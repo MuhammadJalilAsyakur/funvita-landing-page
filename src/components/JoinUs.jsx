@@ -27,9 +27,9 @@ function JoinUs() {
     return (
         <section className="join-us-section bg-gradient-to-br from-indigo-50 to-indigo-100 py-16">
             <div className="container mx-auto text-center px-6">
-                <h2 className="text-4xl font-extrabold mb-6 text-indigo-800 relative">
+                <h2 className="text-4xl font-extrabold mb-6 text-blue-900 relative">
                     Why Choose Us?
-                    <span className="block mt-2 w-20 h-1 mx-auto bg-indigo-600 rounded-full"></span>
+                    <span className="block mt-2 w-20 h-1 mx-auto bg-gradient-to-r from-blue-600 to-blue-900 rounded-full"></span>
                 </h2>
                 <p className="text-lg mb-10 text-gray-600">
                     PT. Funvita Indonesia Investama is a trusted partner for your business development.
@@ -38,13 +38,13 @@ function JoinUs() {
                     {reasons.map((reason, index) => (
                         <div
                             key={index}
-                            className="reason-card group p-6 shadow-lg rounded-xl bg-white hover:bg-gradient-to-r hover:from-indigo-600 hover:to-indigo-700 hover:scale-105 transition-transform duration-300 ease-in-out relative overflow-hidden"
+                            className="reason-card group p-6 shadow-lg rounded-xl bg-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-900 hover:scale-105 transition-transform duration-300 ease-in-out relative overflow-hidden"
                         >
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-t from-indigo-900 to-indigo-600"></div>
-                            <div className="icon flex items-center justify-center w-16 h-16 mb-4 bg-indigo-100 rounded-full text-4xl text-indigo-600 group-hover:bg-white group-hover:text-indigo-900 transition-colors">
+                            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-t from-indigo-900 to-blue-900"></div>
+                            <div className="icon flex items-center justify-center w-16 h-16 mb-4 bg-indigo-100 rounded-full text-4xl text-blue-900 group-hover:bg-white group-hover:text-indigo-900 transition-colors">
                                 {reason.icon}
                             </div>
-                            <h3 className="text-2xl font-semibold mb-3 text-indigo-800 group-hover:text-white transition-colors">
+                            <h3 className="text-2xl font-semibold mb-3 text-blue-900 group-hover:text-white transition-colors">
                                 {reason.title}
                             </h3>
                             <p className="text-gray-600 group-hover:text-indigo-200 transition-colors">
