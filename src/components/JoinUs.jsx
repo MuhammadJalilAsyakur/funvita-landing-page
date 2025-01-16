@@ -47,7 +47,7 @@ function JoinUs() {
                             <h3 className="text-2xl font-semibold mb-3 text-blue-900 group-hover:text-white transition-colors">
                                 {reason.title}
                             </h3>
-                            <p className="text-gray-600 group-hover:text-indigo-200 transition-colors">
+                            <p className="text-gray-600 group-hover:text-white transition-colors">
                                 {reason.description}
                             </p>
                         </div>
