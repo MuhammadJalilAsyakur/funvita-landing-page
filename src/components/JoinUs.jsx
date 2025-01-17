@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function JoinUs() {
     const reasons = [
@@ -24,34 +24,42 @@ function JoinUs() {
         }
     ];
 
+    const [activeTab, setActiveTab] = useState(0);
+
     return (
         <section className="join-us-section bg-gradient-to-br from-indigo-50 to-indigo-100 py-16">
-            <div className="container mx-auto text-center px-6">
-                <h2 className="text-4xl font-extrabold mb-6 text-blue-900 relative">
+            <div className="container mx-auto px-6">
+                {/* Section Header */}
+                <h2 className="text-4xl font-extrabold mb-6 text-blue-900 text-center relative">
                     Why Choose Us?
                     <span className="block mt-2 w-20 h-1 mx-auto bg-gradient-to-r from-blue-600 to-blue-900 rounded-full"></span>
                 </h2>
-                <p className="text-lg mb-10 text-gray-600">
+                <p className="text-lg mb-10 text-gray-600 text-center">
                     PT. Funvita Indonesia Investama is a trusted partner for your business development.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                {/* Tab Navigation */}
+                <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
                     {reasons.map((reason, index) => (
-                        <div
+                        <button
                             key={index}
-                            className="reason-card group p-6 shadow-lg rounded-xl bg-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-900 hover:scale-105 transition-transform duration-300 ease-in-out relative overflow-hidden"
+                            className={`px-6 py-3 text-lg font-semibold rounded-full transition-colors duration-300 
+                                ${activeTab === index
+                                    ? 'bg-blue-900 text-white'
+                                    : 'bg-gray-200 text-blue-900 hover:bg-blue-600 hover:text-white'
+                                }`}
+                            onClick={() => setActiveTab(index)}
                         >
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-t from-indigo-900 to-blue-900"></div>
-                            <div className="icon flex items-center justify-center w-16 h-16 mb-4 bg-indigo-100 rounded-full text-4xl text-blue-900 group-hover:bg-white group-hover:text-indigo-900 transition-colors">
-                                {reason.icon}
-                            </div>
-                            <h3 className="text-2xl font-semibold mb-3 text-blue-900 group-hover:text-white transition-colors">
-                                {reason.title}
-                            </h3>
-                            <p className="text-gray-600 group-hover:text-white transition-colors">
-                                {reason.description}
-                            </p>
-                        </div>
+                            {reason.icon} {reason.title}
+                        </button>
                     ))}
+                </div>
+
+                {/* Tab Content */}
+                <div className="mt-10 p-8 bg-white shadow-lg rounded-lg text-center transition-transform duration-300">
+                    <div className="text-4xl mb-4 text-blue-900">{reasons[activeTab].icon}</div>
+                    <h3 className="text-2xl font-bold text-blue-900 mb-4">{reasons[activeTab].title}</h3>
+                    <p className="text-gray-700 text-lg">{reasons[activeTab].description}</p>
                 </div>
             </div>
         </section>
